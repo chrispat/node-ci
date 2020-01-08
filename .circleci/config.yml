@@ -7,6 +7,13 @@ jobs:
       - run: |
           node -p process.stdout.isTTY
           echo $(tty)
+     
+      - store_artifacts:
+          path: ./docker-componse.yml
+          destination: docker-compose-file
+
+      - store_artifacts:
+          path: .
     
 workflows:
   version: 2
